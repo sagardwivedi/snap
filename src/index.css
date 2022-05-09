@@ -1,3 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    body {
+        background-color: #fafafa;
+        font-family: "Epilogue", sans-serif;
+    }
+}
+
+@layer components {
+    .shadowCustom {
+        box-shadow: 4px 9px 15px -6px rgba(0, 0, 0, 0.34);
+        -webkit-box-shadow: 4px 9px 15px -6px rgba(0, 0, 0, 0.34);
+    }
+}
