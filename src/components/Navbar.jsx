@@ -70,7 +70,7 @@ const Navbar = () => {
                     />
                 </button>
             </div>
-            <div className=" absolute top-0 right-0 hidden h-screen w-[60%] flex-col bg-white md:relative md:flex md:h-0 md:w-full md:flex-row md:items-center md:justify-between md:space-x-4 md:bg-transparent">
+            <div className="absolute toggle top-0 right-0 hidden h-screen w-[60%] flex-col bg-white md:relative md:flex md:h-0 md:w-full md:flex-row md:items-center md:justify-between md:space-x-4 md:bg-transparent">
                 <ul className="flex flex-col md:flex-row md:items-center md:space-x-8">
                     <div className="flex flex-col">
                         <li
