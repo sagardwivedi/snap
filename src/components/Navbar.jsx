@@ -58,24 +58,23 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="relative flex flex-wrap items-center justify-between space-x-8 px-4 py-4 md:flex-row md:flex-nowrap md:px-8 md:py-8">
+        <nav className="flex flex-wrap items-center justify-between space-x-8 px-4 py-4 md:flex-row md:flex-nowrap md:px-8 md:py-8">
             <img src={SnapL} alt="Snap Logo" />
             <div>
                 <button onClick={change} className="flex md:hidden">
                     <img className="toggle block" src={Menu} alt="" />
                     <img
-                        className="toggle z-1 hidden h-8 w-8"
+                        className="toggle hidden h-min w-min"
                         src={menuClose}
                         alt=""
                     />
                 </button>
             </div>
-            <div className="toggle absolute top-0 right-0 hidden h-screen w-[60%] flex-col bg-white md:relative md:flex md:h-0 md:w-full md:flex-row md:items-center md:justify-between md:space-x-4 md:bg-transparent">
+            <div className=" absolute top-0 right-0 hidden h-screen w-[60%] flex-col bg-white md:relative md:flex md:h-0 md:w-full md:flex-row md:items-center md:justify-between md:space-x-4 md:bg-transparent">
                 <ul className="flex flex-col md:flex-row md:items-center md:space-x-8">
                     <div className="flex flex-col">
                         <li
-                            onMouseOver={showDrop1}
-                            onMouseOut={showDrop1}
+                            onClick={showDrop1}
                             className="relative flex cursor-pointer flex-row items-center text-base text-[#696969] hover:text-[#141414] "
                         >
                             <span className="mr-4 text-lg md:mr-2">
@@ -92,11 +91,7 @@ const Navbar = () => {
                                 alt=""
                             />
                         </li>
-                        <ul
-                            onMouseOver={showDrop1}
-                            onMouseOut={showDrop1}
-                            className="drop1 md:shadowCustom hidden h-max w-max  space-y-3 rounded-lg bg-white py-4 px-8 text-center md:absolute md:-left-16 md:mt-8"
-                        >
+                        <ul className="drop1 md:shadowCustom hidden h-max w-max  space-y-3 rounded-lg bg-white py-4 px-8 text-center md:absolute md:-left-16 md:mt-8">
                             <li className="flex cursor-pointer items-center space-x-3 text-[#696969]">
                                 <img src={TodoIcon} alt="" />
                                 <span>Todo List</span>
@@ -117,8 +112,7 @@ const Navbar = () => {
                     </div>
                     <div className="flex flex-col">
                         <li
-                            onMouseOver={showDrop2}
-                            onMouseOut={showDrop2}
+                            onClick={showDrop2}
                             className="relative flex cursor-pointer flex-row items-center text-base text-[#696969] hover:text-[#141414] "
                         >
                             <span className="mr-4 text-lg md:mr-2">
@@ -135,11 +129,7 @@ const Navbar = () => {
                                 alt=""
                             />
                         </li>
-                        <ul
-                            onMouseOver={showDrop2}
-                            onMouseOut={showDrop2}
-                            className="drop2 md:shadowCustom hidden h-max w-max space-y-3 rounded-lg bg-white py-4 px-8 md:absolute md:left-28 md:top-4"
-                        >
+                        <ul className="drop2 md:shadowCustom hidden h-max w-max space-y-3 rounded-lg bg-white py-4 px-8 md:absolute md:left-28 md:top-4">
                             <li className="cursor-pointer text-[#696969]">
                                 <span>History</span>
                             </li>
