@@ -70,7 +70,7 @@ const Navbar = () => {
                     />
                 </button>
             </div>
-            <div className="absolute toggle top-0 right-0 hidden h-screen w-[60%] flex-col bg-white md:relative md:flex md:h-0 md:w-full md:flex-row md:items-center md:justify-between md:space-x-4 md:bg-transparent">
+            <div className="toggle absolute top-0 right-0 hidden h-screen w-[60%] flex-col bg-white md:relative md:flex md:h-0 md:w-full md:flex-row md:items-center md:justify-between md:space-x-4 md:bg-transparent">
                 <ul className="flex flex-col md:flex-row md:items-center md:space-x-8">
                     <div className="flex flex-col">
                         <li
@@ -91,7 +91,10 @@ const Navbar = () => {
                                 alt=""
                             />
                         </li>
-                        <ul className="drop1 md:shadowCustom hidden h-max w-max  space-y-3 rounded-lg bg-white py-4 px-8 text-center md:absolute md:-left-16 md:mt-8">
+                        <ul
+                            onMouseOut={showDrop1}
+                            className="drop1 md:shadowCustom hidden h-max w-max  space-y-3 rounded-lg bg-white py-4 px-8 text-center md:absolute md:-left-16 md:mt-8"
+                        >
                             <li className="flex cursor-pointer items-center space-x-3 text-[#696969]">
                                 <img src={TodoIcon} alt="" />
                                 <span>Todo List</span>
@@ -129,7 +132,10 @@ const Navbar = () => {
                                 alt=""
                             />
                         </li>
-                        <ul className="drop2 md:shadowCustom hidden h-max w-max space-y-3 rounded-lg bg-white py-4 px-8 md:absolute md:left-28 md:top-4">
+                        <ul
+                            onMouseOut={showDrop2}
+                            className="drop2 md:shadowCustom hidden h-max w-max space-y-3 rounded-lg bg-white py-4 px-8 md:absolute md:left-28 md:top-4"
+                        >
                             <li className="cursor-pointer text-[#696969]">
                                 <span>History</span>
                             </li>
