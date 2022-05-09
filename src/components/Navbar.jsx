@@ -62,7 +62,12 @@ const Navbar = () => {
             <img src={SnapL} className="h-min w-min" alt="Snap Logo" />
 
             <button onClick={change} className="md:hidden">
-                <img className="toggle h-min w-min" src={Menu} alt="" />
+                <img
+                    loading="lazy"
+                    className="toggle h-min w-min"
+                    src={Menu}
+                    alt=""
+                />
             </button>
 
             <div className="toggle absolute top-0 right-0 hidden h-screen w-[60%] flex-col space-y-5 bg-white px-4 py-4 md:relative md:flex md:h-0 md:w-full md:flex-row md:items-center md:justify-between md:space-y-0 md:space-x-4 md:bg-transparent md:px-0 md:py-0">
@@ -70,7 +75,12 @@ const Navbar = () => {
                     onClick={change}
                     className="flex w-full justify-end md:hidden"
                 >
-                    <img src={menuClose} className="h-min w-min" alt="" />
+                    <img
+                        src={menuClose}
+                        loading="lazy"
+                        className="h-min w-min"
+                        alt=""
+                    />
                 </button>
                 <ul className="flex flex-col space-y-4 md:flex-row md:items-center md:space-y-0 md:space-x-8">
                     <div className="flex flex-col">
