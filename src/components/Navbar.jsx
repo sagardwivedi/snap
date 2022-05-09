@@ -53,21 +53,21 @@ const Navbar = () => {
             down[0].classList.add("hidden");
         } else {
             up[0].classList.add("hidden");
-            down[0].classList.remove("hidden"); 
+            down[0].classList.remove("hidden");
         }
     };
 
     return (
-        <nav className="flex flex-wrap items-center justify-between space-x-8 px-8 py-4 md:flex-row md:flex-nowrap">
-            <img src={SnapL} alt="Snap Logo" />
+        <nav className="flex flex-wrap items-center justify-between space-x-8 px-8 py-8 md:flex-row md:flex-nowrap">
+            <img src={SnapL} className="relative" alt="Snap Logo" />
             <div>
                 <button onClick={change} className="flex md:hidden">
                     <img className="toggle block" src={Menu} alt="" />
-                    <img className="toggle hidden" src={menuClose} alt="" />
                 </button>
             </div>
-            <div className="toggle w-full items-center  justify-between space-x-4 md:flex">
-                <ul className="flex items-center space-x-8">
+            <div className="absolute top-0 right-0 flex h-screen w-[60%] flex-col bg-white md:relative md:h-0 md:w-full md:flex-row md:items-center md:justify-between md:space-x-4 md:bg-transparent">
+                <img className="toggle h-8 w-8 hidden" src={menuClose} alt="" />
+                <ul className="flex flex-col items-center space-x-8 md:flex-row">
                     <div className="flex flex-col items-center">
                         <li
                             onMouseOver={showDrop1}
@@ -89,7 +89,7 @@ const Navbar = () => {
                         <ul
                             onMouseOver={showDrop1}
                             onMouseOut={showDrop1}
-                            className="drop1 shadowCustom absolute top-14 left-24 mt-2 hidden h-max w-max space-y-3 rounded-lg bg-white py-4 px-8 text-center"
+                            className="drop1 shadowCustom absolute top-4 -left-20 mt-2 hidden h-max w-max space-y-3 rounded-lg bg-white py-4 px-8 text-center"
                         >
                             <li className="flex cursor-pointer items-center space-x-3 text-[#696969]">
                                 <img src={TodoIcon} alt="" />
@@ -130,7 +130,7 @@ const Navbar = () => {
                         <ul
                             onMouseOver={showDrop2}
                             onMouseOut={showDrop2}
-                            className="drop2 shadowCustom absolute top-16 hidden h-max w-max space-y-3 rounded-lg bg-white py-4 px-8"
+                            className="drop2 shadowCustom absolute left-28 top-4 hidden h-max w-max space-y-3 rounded-lg bg-white py-4 px-8"
                         >
                             <li className="cursor-pointer text-[#696969]">
                                 <span>History</span>
