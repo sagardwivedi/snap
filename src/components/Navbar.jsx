@@ -58,30 +58,36 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="flex flex-wrap items-center justify-between space-x-8 px-8 py-8 md:flex-row md:flex-nowrap">
-            <img src={SnapL} className="relative" alt="Snap Logo" />
+        <nav className="relative flex flex-wrap items-center justify-between space-x-8 px-4 py-4 md:flex-row md:flex-nowrap md:px-8 md:py-8">
+            <img src={SnapL} alt="Snap Logo" />
             <div>
                 <button onClick={change} className="flex md:hidden">
                     <img className="toggle block" src={Menu} alt="" />
+                    <img
+                        className="toggle z-1 hidden h-8 w-8"
+                        src={menuClose}
+                        alt=""
+                    />
                 </button>
             </div>
-            <div className="absolute top-0 right-0 flex h-screen w-[60%] flex-col bg-white md:relative md:h-0 md:w-full md:flex-row md:items-center md:justify-between md:space-x-4 md:bg-transparent">
-                <img className="toggle h-8 w-8 hidden" src={menuClose} alt="" />
-                <ul className="flex flex-col items-center space-x-8 md:flex-row">
-                    <div className="flex flex-col items-center">
+            <div className="toggle absolute top-0 right-0 hidden h-screen w-[60%] flex-col bg-white md:relative md:flex md:h-0 md:w-full md:flex-row md:items-center md:justify-between md:space-x-4 md:bg-transparent">
+                <ul className="flex flex-col md:flex-row md:items-center md:space-x-8">
+                    <div className="flex flex-col">
                         <li
                             onMouseOver={showDrop1}
                             onMouseOut={showDrop1}
                             className="relative flex cursor-pointer flex-row items-center text-base text-[#696969] hover:text-[#141414] "
                         >
-                            <span className="mr-2">Features</span>
+                            <span className="mr-4 text-lg md:mr-2">
+                                Features
+                            </span>
                             <img
-                                className="down h-full w-full fill-[#141414]"
+                                className="down h-min w-min fill-[#141414]"
                                 src={ArrowDown}
                                 alt=""
                             />
                             <img
-                                className="up mt-1 hidden h-full w-full"
+                                className="up hidden h-min w-min"
                                 src={ArrowUp}
                                 alt=""
                             />
@@ -89,7 +95,7 @@ const Navbar = () => {
                         <ul
                             onMouseOver={showDrop1}
                             onMouseOut={showDrop1}
-                            className="drop1 shadowCustom absolute top-4 -left-20 mt-2 hidden h-max w-max space-y-3 rounded-lg bg-white py-4 px-8 text-center"
+                            className="drop1 md:shadowCustom hidden h-max w-max  space-y-3 rounded-lg bg-white py-4 px-8 text-center md:absolute md:-left-16 md:mt-8"
                         >
                             <li className="flex cursor-pointer items-center space-x-3 text-[#696969]">
                                 <img src={TodoIcon} alt="" />
@@ -109,20 +115,22 @@ const Navbar = () => {
                             </li>
                         </ul>
                     </div>
-                    <div className="flex flex-col items-center">
+                    <div className="flex flex-col">
                         <li
                             onMouseOver={showDrop2}
                             onMouseOut={showDrop2}
                             className="relative flex cursor-pointer flex-row items-center text-base text-[#696969] hover:text-[#141414] "
                         >
-                            <span className="mr-2">Company</span>
+                            <span className="mr-4 text-lg md:mr-2">
+                                Company
+                            </span>
                             <img
-                                className="down2 h-full w-full fill-[#141414]"
+                                className="down2 h-min w-min fill-[#141414]"
                                 src={ArrowDown}
                                 alt=""
                             />
                             <img
-                                className="up2 hidden h-full w-full"
+                                className="up2 hidden h-min w-min"
                                 src={ArrowUp}
                                 alt=""
                             />
@@ -130,7 +138,7 @@ const Navbar = () => {
                         <ul
                             onMouseOver={showDrop2}
                             onMouseOut={showDrop2}
-                            className="drop2 shadowCustom absolute left-28 top-4 hidden h-max w-max space-y-3 rounded-lg bg-white py-4 px-8"
+                            className="drop2 md:shadowCustom hidden h-max w-max space-y-3 rounded-lg bg-white py-4 px-8 md:absolute md:left-28 md:top-4"
                         >
                             <li className="cursor-pointer text-[#696969]">
                                 <span>History</span>
@@ -150,11 +158,11 @@ const Navbar = () => {
                         About
                     </li>
                 </ul>
-                <div className="flex items-center">
-                    <p className="mr-8 cursor-pointer text-[#696969] hover:text-[#141414]">
+                <div className="mx-auto flex w-[90%] flex-col items-center space-y-5 md:w-auto md:flex-row md:space-y-0">
+                    <p className="cursor-pointer text-[#696969] hover:text-[#141414] md:mr-8">
                         Login
                     </p>
-                    <p className="cursor-pointer rounded-lg border-2 border-[#696969] py-2 px-4 text-[#696969] hover:border-[#141414] hover:text-[#141414]">
+                    <p className="mx-auto w-[90%] cursor-pointer rounded-2xl border-2 border-[#696969] py-2 px-4 text-center text-[#696969] hover:border-[#141414] hover:text-[#141414]">
                         Register
                     </p>
                 </div>
