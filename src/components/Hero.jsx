@@ -9,7 +9,7 @@ import Maker from "../images/client-maker.svg";
 export const Hero = () => {
     return (
         <div className="flex flex-col-reverse md:mx-auto md:w-[82%] md:flex-row md:gap-x-16">
-            <div className="w-full md:my-auto md:h-screen">
+            <div className="w-full md:my-auto md:h-full">
                 <div className="mt-10 space-y-8 text-center md:mt-0 md:w-[68%] md:space-y-14 md:text-left ">
                     <h1 className="text-4xl font-bold md:text-6xl md:tracking-widest">
                         Make remote work
@@ -42,7 +42,7 @@ export const Hero = () => {
                     </div>
                 </div>
             </div>
-            <div className="md:my-auto md:h-screen">
+            <div className="md:my-auto md:h-full">
                 <img
                     src={HeroDesktop}
                     className="hidden md:block md:object-contain"
