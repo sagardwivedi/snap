@@ -41,7 +41,11 @@ const Navbar = () => {
         <nav className="flex flex-wrap items-center justify-between space-x-8 px-4 py-4 md:flex-row md:flex-nowrap md:px-8 md:py-8">
             <img src={SnapL} className="h-min w-min" alt="Snap Logo" />
 
-            <button onClick={change} className="md:hidden">
+            <button
+                aria-label="open menu"
+                onClick={change}
+                className="md:hidden"
+            >
                 <img
                     loading="lazy"
                     className="toggle h-min w-min"
@@ -52,6 +56,7 @@ const Navbar = () => {
 
             <div className="toggle absolute top-0 right-0 hidden h-screen w-[60%] flex-col space-y-5 bg-white px-4 py-4 md:relative md:flex md:h-0 md:w-full md:flex-row md:items-center md:justify-between md:space-y-0 md:space-x-4 md:bg-transparent md:px-0 md:py-0">
                 <button
+                    aria-label="close menu"
                     onClick={change}
                     className="flex w-full justify-end md:hidden"
                 >

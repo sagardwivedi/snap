@@ -1,5 +1,5 @@
-import HeroDesktop from "../images/image-hero-desktop.avif";
-import HeroMobile from "../images/image-hero-mobile.avif";
+import HeroDesktopA from "../images/image-hero-desktop.avif";
+import HeroMobileA from "../images/image-hero-mobile.avif";
 
 import Databiz from "../images/icons/client-databiz.svg";
 import AudioPhile from "../images/icons/client-audiophile.svg";
@@ -44,13 +44,13 @@ export const Hero = () => {
             </div>
             <div className="md:my-auto md:h-full">
                 <img
-                    src={HeroDesktop}
-                    className="hidden h-min w-min md:block md:object-contain"
+                    className="hidden h-max w-max md:block"
+                    src={HeroDesktopA}
                     alt=""
                 />
                 <img
-                    src={HeroMobile}
-                    className="block h-min w-min object-contain md:hidden"
+                    className="block h-full w-full md:hidden"
+                    src={HeroMobileA}
                     alt=""
                 />
             </div>
