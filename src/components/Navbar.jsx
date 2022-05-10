@@ -18,43 +18,23 @@ const Navbar = () => {
     };
 
     const showDrop1 = () => {
-        const d1 = document.getElementsByClassName("drop1");
-        const up = document.getElementsByClassName("up");
-        const down = document.getElementsByClassName("down");
+        const d1 = document.querySelector(".drop1");
+        const up = document.querySelector(".up");
+        const down = document.querySelector(".down");
 
-        if (d1[0].classList.contains("hidden")) {
-            d1[0].classList.remove("hidden");
-        } else {
-            d1[0].classList.add("hidden");
-        }
-
-        if (up[0].classList.contains("hidden")) {
-            up[0].classList.remove("hidden");
-            down[0].classList.add("hidden");
-        } else {
-            up[0].classList.add("hidden");
-            down[0].classList.remove("hidden");
-        }
+        d1.classList.toggle("hidden");
+        up.classList.toggle("hidden");
+        down.classList.toggle("hidden");
     };
 
     const showDrop2 = () => {
-        const d2 = document.getElementsByClassName("drop2");
-        const up = document.getElementsByClassName("up2");
-        const down = document.getElementsByClassName("down2");
+        const d2 = document.querySelector(".drop2");
+        const up = document.querySelector(".up2");
+        const down = document.querySelector(".down2");
 
-        if (d2[0].classList.contains("hidden")) {
-            d2[0].classList.remove("hidden");
-        } else {
-            d2[0].classList.add("hidden");
-        }
-
-        if (up[0].classList.contains("hidden")) {
-            up[0].classList.remove("hidden");
-            down[0].classList.add("hidden");
-        } else {
-            up[0].classList.add("hidden");
-            down[0].classList.remove("hidden");
-        }
+        d2.classList.toggle("hidden");
+        up.classList.toggle("hidden");
+        down.classList.toggle("hidden");
     };
 
     return (
@@ -145,7 +125,7 @@ const Navbar = () => {
                             onClick={showDrop2}
                             className="relative flex cursor-pointer flex-row items-center text-base text-[#696969] hover:text-[#141414] "
                         >
-                            <span className="mr-4 mr-2">Company</span>
+                            <span className="mr-4 md:mr-2">Company</span>
                             <img
                                 className="down2 h-min w-min fill-[#141414] default:block"
                                 src={ArrowDown}
@@ -180,12 +160,12 @@ const Navbar = () => {
                     </li>
                 </ul>
                 <div className="mx-auto flex w-[90%] flex-col items-center space-y-4 md:w-auto md:flex-row md:space-y-0">
-                    <p className="cursor-pointer text-[#696969] hover:text-[#141414] md:mr-8">
+                    <button className="cursor-pointer text-[#696969] hover:text-[#141414] md:mr-8">
                         Login
-                    </p>
-                    <p className="mx-auto w-[90%] cursor-pointer rounded-2xl border-2 border-[#696969] py-2 px-4 text-center text-[#696969] hover:border-[#141414] hover:text-[#141414]">
+                    </button>
+                    <button className="mx-auto w-[90%] cursor-pointer rounded-2xl border-2 border-[#696969] py-2 px-4 text-center text-[#696969] hover:border-[#141414] hover:text-[#141414]">
                         Register
-                    </p>
+                    </button>
                 </div>
             </div>
         </nav>
