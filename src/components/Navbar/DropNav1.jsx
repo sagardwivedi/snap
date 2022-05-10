@@ -35,39 +35,19 @@ const DropNav1 = () => {
                 className="drop1 md:shadowCustom hidden h-max w-max space-y-3 rounded-lg bg-white py-2 px-4 text-center md:absolute md:-left-16 md:mt-8 md:py-4 md:px-8"
             >
                 <li className="flex cursor-pointer items-center space-x-3 text-[#696969]">
-                    <img
-                        loading="lazy"
-                        className="h-5 md:h-min"
-                        src={TodoIcon}
-                        alt=""
-                    />
+                    <img className="h-5 md:h-min" src={TodoIcon} alt="" />
                     <p className="text-base">Todo List</p>
                 </li>
                 <li className="flex cursor-pointer items-center space-x-3 text-[#696969]">
-                    <img
-                        loading="lazy"
-                        className="h-5 md:h-min"
-                        src={CalendarIcon}
-                        alt=""
-                    />
+                    <img className="h-5 md:h-min" src={CalendarIcon} alt="" />
                     <span className="text-base">Calendar</span>
                 </li>
                 <li className="flex cursor-pointer items-center space-x-3 text-[#696969]">
-                    <img
-                        loading="lazy"
-                        className="h-5 md:h-min"
-                        src={ReminderIcon}
-                        alt=""
-                    />
+                    <img className="h-5 md:h-min" src={ReminderIcon} alt="" />
                     <span className="text-base">Reminder</span>
                 </li>
                 <li className="flex cursor-pointer items-center space-x-3 text-[#696969]">
-                    <img
-                        loading="lazy"
-                        className="h-5 md:h-min"
-                        src={Planicon}
-                        alt=""
-                    />
+                    <img className="h-5 md:h-min" src={Planicon} alt="" />
                     <span className="text-base">Planning</span>
                 </li>
             </ul>
