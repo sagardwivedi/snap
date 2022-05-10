@@ -47,10 +47,10 @@ const Navbar = () => {
                     />
                 </button>
                 <ul className="flex flex-col space-y-4 md:flex-row md:items-center md:space-y-0 md:space-x-8">
-                    <Suspense fallback={<div>.....loading</div>}>
+                    <Suspense fallback={<div>loading</div>}>
                         <NavComponent1 />
                     </Suspense>
-                    <Suspense fallback={<div>.....loading</div>}>
+                    <Suspense fallback={<div>loading</div>}>
                         <NavComponent2 />
                     </Suspense>
                     <li className="cursor-pointer text-base text-[#696969] hover:text-[#141414]">
