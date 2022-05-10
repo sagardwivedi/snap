@@ -2,7 +2,7 @@ import SnapL from "../../images/icons/logo.svg";
 import Menu from "../../images/icons/icon-menu.svg";
 import menuClose from "../../images/icons/icon-close-menu.svg";
 
-import { lazy } from "react";
+import { lazy, Suspense } from "react";
 
 const NavComponent1 = lazy(() => import("./DropNav1.jsx"));
 const NavComponent2 = lazy(() => import("./DropNav2.jsx"));
@@ -47,7 +47,9 @@ const Navbar = () => {
                     />
                 </button>
                 <ul className="flex flex-col space-y-4 md:flex-row md:items-center md:space-y-0 md:space-x-8">
-                    <NavComponent1 />
+                    <Suspense fallback={<div>.....loading</div>}>
+                        <NavComponent1 />
+                    </Suspense>
                     <NavComponent2 />
                     <li className="cursor-pointer text-base text-[#696969] hover:text-[#141414]">
                         Careers
