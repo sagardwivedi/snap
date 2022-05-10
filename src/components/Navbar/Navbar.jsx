@@ -26,7 +26,7 @@ const Navbar = () => {
                 className="md:hidden"
             >
                 <img
-                    loading="lazy"
+                    loading="eager"
                     className="toggle h-min w-min"
                     src={Menu}
                     alt=""
@@ -50,7 +50,9 @@ const Navbar = () => {
                     <Suspense fallback={<div>.....loading</div>}>
                         <NavComponent1 />
                     </Suspense>
-                    <NavComponent2 />
+                    <Suspense fallback={<div>.....loading</div>}>
+                        <NavComponent2 />
+                    </Suspense>
                     <li className="cursor-pointer text-base text-[#696969] hover:text-[#141414]">
                         Careers
                     </li>
