@@ -17,7 +17,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="flex flex-wrap items-center justify-between space-x-8 px-4 py-4 md:flex-row md:flex-nowrap md:px-8 md:py-8">
+        <nav className="flex flex-wrap items-center justify-between space-x-8 px-4 py-4 md:flex-row md:flex-nowrap md:px-8 md:py-6">
             <img src={SnapL} className="h-min w-min" alt="Snap Logo" />
 
             <button

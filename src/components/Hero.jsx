@@ -1,10 +1,15 @@
-import HeroDesktopA from "../images/image-hero-desktop.avif";
-import HeroMobileA from "../images/image-hero-mobile.avif";
+import DesktopW from "../images/image-hero-desktop.webp";
+import Desktop from "../images/image-hero-desktop.png";
+
+import MobileW from "../images/image-hero-mobile.webp";
+import Mobile from "../images/image-hero-mobile.png";
 
 import Databiz from "../images/icons/client-databiz.svg";
 import AudioPhile from "../images/icons/client-audiophile.svg";
 import Meet from "../images/icons/client-meet.svg";
 import Maker from "../images/icons/client-maker.svg";
+
+import { isWebpSupported } from "react-image-webp/dist/utils";
 
 export const Hero = () => {
     return (
@@ -43,16 +48,33 @@ export const Hero = () => {
                 </div>
             </div>
             <div className="md:my-auto md:h-full">
-                <img
-                    className="hidden h-max w-max md:block"
-                    src={HeroDesktopA}
-                    alt=""
-                />
-                <img
-                    className="block h-full w-full md:hidden"
-                    src={HeroMobileA}
-                    alt=""
-                />
+                {isWebpSupported() ? (
+                    <img
+                        className="hidden h-min w-min md:block"
+                        src={DesktopW}
+                        alt=""
+                    />
+                ) : (
+                    <img
+                        className="hidden h-min w-min md:block"
+                        src={Desktop}
+                        alt=""
+                    />
+                )}
+
+                {isWebpSupported() ? (
+                    <img
+                        className="block h-min w-min md:hidden"
+                        src={MobileW}
+                        alt=""
+                    />
+                ) : (
+                    <img
+                        className="block h-min w-min md:hidden"
+                        src={Mobile}
+                        alt=""
+                    />
+                )}
             </div>
         </div>
     );
