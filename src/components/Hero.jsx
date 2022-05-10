@@ -1,10 +1,10 @@
-import HeroDesktop from "../images/image-hero-desktop.png";
-import HeroMobile from "../images/image-hero-mobile.png";
+import HeroDesktop from "../images/image-hero-desktop.avif";
+import HeroMobile from "../images/image-hero-mobile.avif";
 
-import Databiz from "../images/client-databiz.svg";
-import AudioPhile from "../images/client-audiophile.svg";
-import Meet from "../images/client-meet.svg";
-import Maker from "../images/client-maker.svg";
+import Databiz from "../images/icons/client-databiz.svg";
+import AudioPhile from "../images/icons/client-audiophile.svg";
+import Meet from "../images/icons/client-meet.svg";
+import Maker from "../images/icons/client-maker.svg";
 
 export const Hero = () => {
     return (
@@ -45,12 +45,12 @@ export const Hero = () => {
             <div className="md:my-auto md:h-full">
                 <img
                     src={HeroDesktop}
-                    className="hidden md:block md:object-contain"
+                    className="hidden h-min w-min md:block md:object-contain"
                     alt=""
                 />
                 <img
                     src={HeroMobile}
-                    className="block object-contain md:hidden "
+                    className="block h-min w-min object-contain md:hidden"
                     alt=""
                 />
             </div>

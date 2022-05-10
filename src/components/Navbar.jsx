@@ -1,12 +1,12 @@
-import SnapL from "../images/logo.svg";
-import Menu from "../images/icon-menu.svg";
-import menuClose from "../images/icon-close-menu.svg";
-import ArrowUp from "../images/icon-arrow-up.svg";
-import ArrowDown from "../images/icon-arrow-down.svg";
-import TodoIcon from "../images/icon-todo.svg";
-import CalendarIcon from "../images/icon-calendar.svg";
-import ReminderIcon from "../images/icon-reminders.svg";
-import Planicon from "../images/icon-planning.svg";
+import SnapL from "../images/icons/logo.svg";
+import Menu from "../images/icons/icon-menu.svg";
+import menuClose from "../images/icons/icon-close-menu.svg";
+import ArrowUp from "../images/icons/icon-arrow-up.svg";
+import ArrowDown from "../images/icons/icon-arrow-down.svg";
+import TodoIcon from "../images/icons/icon-todo.svg";
+import CalendarIcon from "../images/icons/icon-calendar.svg";
+import ReminderIcon from "../images/icons/icon-reminders.svg";
+import Planicon from "../images/icons/icon-planning.svg";
 
 const Navbar = () => {
     const change = () => {
