@@ -11,7 +11,7 @@ export const Hero = () => {
         <div className="flex flex-col-reverse md:mx-auto md:w-[82%] md:flex-row md:gap-x-16">
             <div className="w-full md:my-auto md:h-screen">
                 <div className="mt-10 space-y-8 text-center md:mt-0 md:w-[68%] md:space-y-14 md:text-left ">
-                    <h1 className="text-4xl md:tracking-widest font-bold md:text-6xl">
+                    <h1 className="text-4xl font-bold md:text-6xl md:tracking-widest">
                         Make remote work
                     </h1>
                     <p className="text-lg text-[#696969]">
@@ -19,7 +19,7 @@ export const Hero = () => {
                         Streamline processes,create team rituals,and watch
                         productivity soar.
                     </p>
-                    <button className="w-max h-max rounded-2xl bg-black px-6 py-3 font-bold text-white shadow-md">
+                    <button className="h-max w-max rounded-2xl border-2 border-black bg-black px-6 py-3 font-bold text-white shadow-md hover:border-[#696969] hover:bg-transparent hover:text-[#696969]">
                         Learn More
                     </button>
                     <div className="mx-auto flex w-[90%] flex-row justify-between md:mt-10 md:w-full md:space-x-4">
