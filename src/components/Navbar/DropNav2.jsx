@@ -5,7 +5,7 @@ const DropNav2 = () => {
     return (
         <Menu
             as="div"
-            className="relative block rounded-md text-base font-medium"
+            className="relative"
         >
             <Menu.Button className="inline-flex text-[#696969] hover:text-[#141414]">
                 Company
@@ -19,7 +19,7 @@ const DropNav2 = () => {
                 leaveFrom="opacity-100"
                 leaveTo="opacity-0"
             >
-                <Menu.Items className="flex w-max origin-top-right flex-col space-y-2 px-6 py-3 text-[#696969]  md:absolute md:mt-2 md:rounded-lg  md:bg-white md:drop-shadow-md">
+                <Menu.Items className="flex w-max flex-col space-y-2 px-6 py-3 text-[#696969] md:absolute md:mt-2 md:rounded-lg  md:bg-white md:drop-shadow-md">
                     <Menu.Item>
                         <a href="/todo" className="hover:text-[#141414]">
                             History
