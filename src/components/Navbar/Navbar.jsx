@@ -1,75 +1,154 @@
+import React, { Fragment, lazy } from "react";
+import { Menu, Transition } from "@headlessui/react";
+import { MenuIcon, XIcon } from "@heroicons/react/outline";
+
 import SnapL from "../../images/icons/logo.svg";
-import Menu from "../../images/icons/icon-menu.svg";
-import menuClose from "../../images/icons/icon-close-menu.svg";
 
-import { lazy, Suspense } from "react";
+// import DropNav1 from "./DropNav1";
 
-const NavComponent1 = lazy(() => import("./DropNav1.jsx"));
-const NavComponent2 = lazy(() => import("./DropNav2.jsx"));
+const Compo1 = lazy(() => import("./DropNav1"));
+const Compo2 = lazy(() => import("./DropNav2"));
 
 const Navbar = () => {
-    const change = () => {
-        const navTog = document.getElementsByClassName("toggle");
-
-        for (let i = 0; i < navTog.length; i++) {
-            navTog[i].classList.toggle("hidden");
-        }
-    };
-
     return (
-        <nav className="flex flex-wrap items-center justify-between space-x-8 px-4 py-4 md:flex-row md:flex-nowrap md:px-8 md:py-6">
-            <img src={SnapL} className="h-min w-min" alt="Snap Logo" />
+        <div className="relative">
+            <div className="mx-auto w-[95%]">
+                <div className="relative">
+                    <Menu>
+                        <div className="relative py-4">
+                            <nav
+                                className="relative flex items-center"
+                                aria-label="Global"
+                            >
+                                <div className="flex flex-shrink-0 flex-grow items-center lg:flex-grow-0">
+                                    <div className="flex w-full items-center justify-between md:w-auto">
+                                        <a href="/something">
+                                            <span className="sr-only">
+                                                Snap
+                                            </span>
+                                            <img
+                                                src={SnapL}
+                                                alt="Comapany logo"
+                                            />
+                                        </a>
+                                        <div className="flex items-center md:hidden">
+                                            <Menu.Button className="inline-flex items-center justify-center rounded-md  p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                                                <span className="sr-only">
+                                                    Open main menu
+                                                </span>
+                                                <MenuIcon
+                                                    className="h-8 w-8"
+                                                    aria-hidden="true"
+                                                />
+                                            </Menu.Button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="hidden w-full md:ml-10 md:flex md:flex-row md:items-center md:justify-between ">
+                                    <div className="flex flex-row items-center space-x-8">
+                                        <Compo1 />
+                                        <Compo2 />
+                                        <a
+                                            href="/login"
+                                            className="font-medium text-gray-500 hover:text-gray-900"
+                                        >
+                                            Career
+                                        </a>
+                                        <a
+                                            className="font-medium text-gray-500 hover:text-gray-900"
+                                            href="/register"
+                                        >
+                                            About us
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a
+                                            href="/login"
+                                            className="mr-4 font-medium text-gray-500 hover:text-gray-900"
+                                        >
+                                            Login
+                                        </a>
+                                        <a
+                                            className="rounded-xl border-2 border-[#696969] px-4 py-3 font-medium text-gray-500 hover:border-[#141414] hover:text-[#141414]"
+                                            href="/register"
+                                        >
+                                            Register
+                                        </a>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
 
-            <button
-                aria-label="open menu"
-                onClick={change}
-                className="md:hidden"
-            >
-                <img
-                    loading="eager"
-                    className="toggle h-min w-min"
-                    src={Menu}
-                    alt=""
-                />
-            </button>
-
-            <div className="toggle absolute top-0 right-0 hidden h-screen w-[60%] flex-col space-y-5 bg-white px-4 py-4 md:relative md:flex md:h-0 md:w-full md:flex-row md:items-center md:justify-between md:space-y-0 md:space-x-4 md:bg-transparent md:px-0 md:py-0">
-                <button
-                    aria-label="close menu"
-                    onClick={change}
-                    className="flex w-full justify-end md:hidden"
-                >
-                    <img
-                        src={menuClose}
-                        loading="lazy"
-                        className="h-min w-min"
-                        alt=""
-                    />
-                </button>
-                <ul className="flex flex-col space-y-4 md:flex-row md:items-center md:space-y-0 md:space-x-8">
-                    <Suspense fallback={<div>loading</div>}>
-                        <NavComponent1 />
-                    </Suspense>
-                    <Suspense fallback={<div>loading</div>}>
-                        <NavComponent2 />
-                    </Suspense>
-                    <li className="cursor-pointer text-base text-[#696969] hover:text-[#141414]">
-                        Careers
-                    </li>
-                    <li className="cursor-pointer text-base text-[#696969] hover:text-[#141414]">
-                        About
-                    </li>
-                </ul>
-                <div className="mx-auto flex w-[90%] flex-col items-center space-y-4 md:w-auto md:flex-row md:space-y-0">
-                    <button className="cursor-pointer text-[#696969] hover:text-[#141414] md:mr-8">
-                        Login
-                    </button>
-                    <button className="mx-auto w-[90%] cursor-pointer rounded-2xl border-2 border-[#696969] py-2 px-4 text-center text-[#696969] hover:border-[#141414] hover:text-[#141414]">
-                        Register
-                    </button>
+                        <Transition
+                            as={Fragment}
+                            enter="transition ease-in-out duration-300 transform"
+                            enterFrom="translate-x-full"
+                            enterTo="-translate-x-0"
+                            leave="transition ease-in-out duration-300 transform"
+                            leaveFrom="-translate-x-0"
+                            leaveTo="translate-x-full"
+                        >
+                            <Menu.Items className="absolute top-0 right-0 w-[60%]  md:hidden">
+                                <div className="overflow-hidden rounded-l bg-white shadow-md ring-1 ring-black ring-opacity-5">
+                                    <div className="flex items-center justify-between px-5 pt-4">
+                                        <div>
+                                            <img
+                                                className="w-auto"
+                                                src={SnapL}
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div className="-mr-2">
+                                            <Menu.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                                                <span className="sr-only">
+                                                    Close main menu
+                                                </span>
+                                                <XIcon
+                                                    className="h-8 w-8"
+                                                    aria-hidden="true"
+                                                />
+                                            </Menu.Button>
+                                        </div>
+                                    </div>
+                                    <div className="flex flex-col px-2 pt-2 pb-3">
+                                        <div className="flex flex-col px-2 pt-2 pb-2 space-y-5">
+                                            <Compo1 />
+                                            <Compo2 />
+                                            <a
+                                                href="/login"
+                                                className="font-medium text-gray-500 hover:text-gray-900"
+                                            >
+                                                Career
+                                            </a>
+                                            <a
+                                                className="font-medium text-gray-500 hover:text-gray-900"
+                                                href="/register"
+                                            >
+                                                About us
+                                            </a>
+                                        </div>
+                                        <div className="flex flex-col items-center pt-10 space-y-5">
+                                            <a
+                                                href="/login"
+                                                className="mr-4 font-medium text-gray-500 hover:text-gray-900"
+                                            >
+                                                Login
+                                            </a>
+                                            <a
+                                                className="rounded-xl border-2 border-[#696969] px-4 py-3 w-full text-center font-medium text-gray-500 hover:border-[#141414] hover:text-[#141414]"
+                                                href="/register"
+                                            >
+                                                Register
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </Menu.Items>
+                        </Transition>
+                    </Menu>
                 </div>
             </div>
-        </nav>
+        </div>
     );
 };
 
