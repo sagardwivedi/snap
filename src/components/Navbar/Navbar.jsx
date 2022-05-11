@@ -4,8 +4,6 @@ import { MenuIcon, XIcon } from "@heroicons/react/outline";
 
 import SnapL from "../../images/icons/logo.svg";
 
-// import DropNav1 from "./DropNav1";
-
 const Compo1 = lazy(() => import("./DropNav1"));
 const Compo2 = lazy(() => import("./DropNav2"));
 
@@ -32,7 +30,7 @@ const Navbar = () => {
                                             />
                                         </a>
                                         <div className="flex items-center md:hidden">
-                                            <Menu.Button className="inline-flex items-center justify-center rounded-md  p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                                            <Menu.Button className="inline-flex items-center justify-center rounded-md  p-2 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                                                 <span className="sr-only">
                                                     Open main menu
                                                 </span>
@@ -88,7 +86,7 @@ const Navbar = () => {
                             leaveFrom="-translate-x-0"
                             leaveTo="translate-x-full"
                         >
-                            <Menu.Items className="absolute top-0 right-0 w-[60%]  md:hidden">
+                            <Menu.Items className="absolute top-0 right-0 w-[60%] md:hidden">
                                 <div className="overflow-hidden rounded-l bg-white shadow-md ring-1 ring-black ring-opacity-5">
                                     <div className="flex items-center justify-between px-5 pt-4">
                                         <div>
@@ -99,7 +97,7 @@ const Navbar = () => {
                                             />
                                         </div>
                                         <div className="-mr-2">
-                                            <Menu.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                                            <Menu.Button className="inline-flex items-center justify-center rounded-md p-2hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                                                 <span className="sr-only">
                                                     Close main menu
                                                 </span>
