@@ -1,46 +1,40 @@
-import ArrowUp from "../../images/icons/icon-arrow-up.svg";
-import ArrowDown from "../../images/icons/icon-arrow-down.svg";
-
-const showDrop2 = () => {
-    const d2 = document.querySelector(".drop2");
-    const up = document.querySelector(".up2");
-    const down = document.querySelector(".down2");
-
-    d2.classList.toggle("hidden");
-    up.classList.toggle("hidden");
-    down.classList.toggle("hidden");
-};
+import { Menu, Transition } from "@headlessui/react";
+import { ChevronDownIcon } from "@heroicons/react/solid";
 
 const DropNav2 = () => {
     return (
-        <div className="flex flex-col">
-            <li
-                onClick={showDrop2}
-                className="md:relative flex cursor-pointer flex-row items-center text-base text-[#696969] hover:text-[#141414] "
+        <Menu as="div" className="relative inline-block">
+            <Menu.Button className="inline-flex text-[#696969]">
+                Company
+                <ChevronDownIcon className="ml-2 h-5 w-5" />
+            </Menu.Button>
+            <Transition
+                enter="transition-opacity duration-75"
+                enterFrom="opacity-0"
+                enterTo="opacity-100"
+                leave="transition-opacity duration-150"
+                leaveFrom="opacity-100"
+                leaveTo="opacity-0"
             >
-                <span className="mr-4 md:mr-2">Company</span>
-                <img
-                    className="down2 h-min w-min fill-[#141414] default:block"
-                    src={ArrowDown}
-                    alt=""
-                />
-                <img className="up2 hidden h-min w-min" src={ArrowUp} alt="" />
-            </li>
-            <ul
-                onMouseLeave={showDrop2}
-                className="drop2 md:shadowCustom hidden h-max w-max cursor-pointer space-y-3 rounded-lg bg-white py-2 px-4  text-[#696969] md:absolute md:mt-8 md:py-4 md:px-8"
-            >
-                <li className="">
-                    <span>History</span>
-                </li>
-                <li className="">
-                    <span>Our Team</span>
-                </li>
-                <li className="">
-                    <span>Blog</span>
-                </li>
-            </ul>
-        </div>
+                <Menu.Items className="flex w-max flex-col space-y-2 bg-white px-6 py-3 text-[#696969] md:absolute md:mt-2 md:rounded-lg md:drop-shadow-md">
+                    <Menu.Item>
+                        <a href="/todo" className="inline-flex items-center">
+                            History
+                        </a>
+                    </Menu.Item>
+                    <Menu.Item>
+                        <a href="/calendar" className="inline-flex">
+                            Our Team
+                        </a>
+                    </Menu.Item>
+                    <Menu.Item>
+                        <a href="/reminder" className="inline-flex">
+                            Blog
+                        </a>
+                    </Menu.Item>
+                </Menu.Items>
+            </Transition>
+        </Menu>
     );
 };
 
