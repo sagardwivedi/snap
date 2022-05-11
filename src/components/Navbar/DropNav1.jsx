@@ -1,57 +1,72 @@
-import TodoIcon from "../../images/icons/icon-todo.svg";
-import CalendarIcon from "../../images/icons/icon-calendar.svg";
-import ReminderIcon from "../../images/icons/icon-reminders.svg";
-import Planicon from "../../images/icons/icon-planning.svg";
-import ArrowUp from "../../images/icons/icon-arrow-up.svg";
-import ArrowDown from "../../images/icons/icon-arrow-down.svg";
-
-const showDrop1 = () => {
-    const d1 = document.querySelector(".drop1");
-    const up = document.querySelector(".up");
-    const down = document.querySelector(".down");
-
-    d1.classList.toggle("hidden");
-    up.classList.toggle("hidden");
-    down.classList.toggle("hidden");
-};
+import { Menu } from "@headlessui/react";
+import {
+    ChevronDownIcon,
+    ChevronUpIcon,
+    ClipboardListIcon,
+    CalendarIcon,
+    BellIcon,
+    ClockIcon,
+} from "@heroicons/react/solid";
 
 const DropNav1 = () => {
     return (
-        <div className="flex flex-col">
-            <li
-                onClick={showDrop1}
-                className="relative flex cursor-pointer flex-row items-center text-base text-[#696969] hover:text-[#141414] "
-            >
-                <span className="mr-4 text-lg md:mr-2">Features</span>
-                <img
-                    className="down h-min w-min fill-[#141414] default:block"
-                    src={ArrowDown}
-                    alt=""
-                />
-                <img className="up hidden h-min w-min" src={ArrowUp} alt="" />
-            </li>
-            <ul
-                onMouseLeave={showDrop1}
-                className="drop1 md:shadowCustom hidden h-max w-max space-y-3 rounded-lg bg-white py-2 px-4 text-center md:absolute md:-left-16 md:mt-8 md:py-4 md:px-8"
-            >
-                <li className="flex cursor-pointer items-center space-x-3 text-[#696969]">
-                    <img className="h-5 md:h-min" src={TodoIcon} alt="" />
-                    <p className="text-base">Todo List</p>
-                </li>
-                <li className="flex cursor-pointer items-center space-x-3 text-[#696969]">
-                    <img className="h-5 md:h-min" src={CalendarIcon} alt="" />
-                    <span className="text-base">Calendar</span>
-                </li>
-                <li className="flex cursor-pointer items-center space-x-3 text-[#696969]">
-                    <img className="h-5 md:h-min" src={ReminderIcon} alt="" />
-                    <span className="text-base">Reminder</span>
-                </li>
-                <li className="flex cursor-pointer items-center space-x-3 text-[#696969]">
-                    <img className="h-5 md:h-min" src={Planicon} alt="" />
-                    <span className="text-base">Planning</span>
-                </li>
-            </ul>
-        </div>
+        <>
+            <Menu as="div" className="relative inline-block">
+                {({ active }) => (
+                    <>
+                        <Menu.Button className="inline-flex text-[#696969]">
+                            Features
+                            {active ? (
+                                <ChevronUpIcon className="ml-2 h-5 w-5" />
+                            ) : (
+                                <ChevronDownIcon className="ml-2 h-5 w-5" />
+                            )}
+                        </Menu.Button>
+                        <Menu.Items className="flex w-max flex-col space-y-2 bg-white px-6 py-3 text-[#696969] md:absolute  md:rounded-lg md:shadow-lg">
+                            <Menu.Item>
+                                <a
+                                    href="/todo"
+                                    className="inline-flex items-center"
+                                >
+                                    <ClipboardListIcon
+                                        aria-hidden="true"
+                                        className="mr-2 h-5 w-5 fill-[#726CEE]"
+                                    />
+                                    Todo list
+                                </a>
+                            </Menu.Item>
+                            <Menu.Item>
+                                <a href="/calendar" className="inline-flex">
+                                    <CalendarIcon
+                                        aria-hidden="true"
+                                        className="mr-2 h-5 w-5 fill-[#4BB1DA]"
+                                    />
+                                    Calendar
+                                </a>
+                            </Menu.Item>
+                            <Menu.Item>
+                                <a href="/reminder" className="inline-flex">
+                                    <BellIcon
+                                        aria-hidden="true"
+                                        className="mr-2 h-5 w-5 fill-[#EDD556]"
+                                    />
+                                    Reminder
+                                </a>
+                            </Menu.Item>
+                            <Menu.Item>
+                                <a href="/planning" className="inline-flex">
+                                    <ClockIcon
+                                        aria-hidden="true"
+                                        className="mr-2 h-5 w-5 fill-[#8E4CB6]"
+                                    />
+                                    Planning
+                                </a>
+                            </Menu.Item>
+                        </Menu.Items>
+                    </>
+                )}
+            </Menu>
+        </>
     );
 };
 
